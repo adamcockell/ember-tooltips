@@ -468,8 +468,10 @@ export default Component.extend({
     if (!_tooltip || this.get('isDestroying')) {
       return;
     }
-
-    _tooltip.popperInstance.popper.classList.remove(ANIMATION_CLASS);
+    
+    if (_tooltip.popperInstance) {
+      _tooltip.popperInstance.popper.classList.remove(ANIMATION_CLASS);
+    }
 
     run.later(() => {
 
